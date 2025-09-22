@@ -2441,6 +2441,7 @@ En esta práctica trabajaremos con un archivo llamado `cuento.md`, donde escribi
 3. Creamos otra rama y editamos **la segunda línea** del cuento en `master` y en la nueva rama, provocando un **conflicto en `git merge`**.  
 4. Usamos `git status` para ver los archivos en conflicto.  
 5. Resolvemos el conflicto manualmente y verificamos el resultado con `cat`.  
+6. Subimos el repositorio a nuestra cuenta de GitHub. ✅
 
 ---
 
@@ -2905,12 +2906,60 @@ Este commit guarda los cambios y completa el `merge`, dejando el repositorio en 
 
 ---
 
+### **6. Subir el repositorio a GitHub**  <!-- omit in toc -->
+
+📌 **Creamos un repositorio vacío en GitHub** (desde la web, sin README ni `.gitignore`) llamado `practica-merge`.
+
+📌 **Vinculamos el repositorio local con GitHub:**
+
+```bash
+git remote add origin https://github.com/<TU_USUARIO>/practica-merge.git
+```
+
+> 🔎 Reemplaza `<TU_USUARIO>` con tu nombre de usuario en GitHub.
+
+📌 **Verificamos que el remoto se agregó correctamente:**
+
+```bash
+git remote -v
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+origin  https://github.com/TU_USUARIO/practica-merge.git (fetch)
+origin  https://github.com/TU_USUARIO/practica-merge.git (push)
+```
+
+📌 **Subimos los cambios a GitHub:**
+
+```bash
+git push -u origin master
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (25/25), 2.95 KiB | 2.95 MiB/s, done.
+Total 25 (delta 3), reused 0 (delta 0)
+To https://github.com/TU_USUARIO/practica-merge.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+```
+
+✅ **Listo!** Tu práctica ahora está respaldada en GitHub y puedes compartir el enlace de tu repositorio. 🚀
+
+---
+
 Aquí tienes una imagen que muestra cómo debería verse tu Git Bash después de ejecutar los comandos de esta práctica, para que tengas una referencia clara de lo que deberías ver:
 
 <p align="center">
   <img src="img/git9.png" height="2500">
 </p>
-
 
 &nbsp;&nbsp;&nbsp;[↩️](#tabla-de-contenido)
 
