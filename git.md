@@ -1202,7 +1202,7 @@ git add frutas.txt ciudades.txt
 > 
 > En lugar de `git add .`, usa `git add -u` si solo deseas agregar los archivos modificados y eliminados que Git ya rastrea, sin incluir archivos nuevos no rastreados. Este comando es útil para asegurarte de que solo los cambios relevantes (sin nuevos archivos) sean parte del commit, evitando así cometer errores. 
 
-> <h4>⚡ Hack</h4>  
+<!-- > <h4>⚡ Hack</h4>  
 >
 >  Aquí tienes un truco que lo hace todo **en un solo comando**. Lo mejor de todo: nadie tiene que saberlo. 🤫
 > 
@@ -1210,7 +1210,7 @@ git add frutas.txt ciudades.txt
 > git commit -am "subiendo todo"
 > ```
 > Este comando es como si hicieras primero un `git add -u` para agregar todos los archivos modificados que ya están siendo rastreados por Git y luego un `git commit -m "subiendo todo"` para hacer el commit con el mensaje que hayas especificado. Todo se hace de una vez.
-
+ -->
 
 #### **5. Verificar el estado de los cambios**  
 Usa `git status` para confirmar que los archivos están en el **stage** y listos para ser confirmados:  
