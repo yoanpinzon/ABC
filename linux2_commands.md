@@ -9,6 +9,11 @@ Exploraremos herramientas clave como `grep`, `cut`, `sort`, y `sed`, que permite
 El comando `read` es fundamental cuando necesitamos capturar datos ingresados por el usuario. Este comando es útil en muchos contextos, como cuando necesitamos obtener un nombre, un número o cualquier otra información.
 
 **Ejemplo 1: Capturar el nombre del usuario**
+
+```bash
+cd ~/workspace
+```
+
 ```bash
 echo -n "Por favor, ingresa tu nombre: "
 read nombre
@@ -554,8 +559,6 @@ bash frutas3.sh
 **En resumen:**
 
 Estos dos ejemplos muestran cómo `sed` puede utilizarse para realizar modificaciones básicas en archivos de texto: reemplazar texto y eliminar líneas.
-
-Aquí tienes la explicación ajustada para incluir el uso de `awk`:
 
 ## 6. Manipulando Textos con `awk`
 

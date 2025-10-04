@@ -311,7 +311,14 @@ mkdir carpeta{1..10}_ver{A..B}
 
 ```bash
 set +B
+```
+
+```bash
 echo {1..10}
+```
+
+```bash
+set -B
 ```
 
 <details><summary>👨‍🏫 Explanation</summary>
@@ -324,6 +331,9 @@ echo {1..10}
 
 ```bash
 echo $SHELLOPTS
+```
+
+```bash
 set -o
 ```
 <details><summary>👨‍🏫 Explanation</summary>
@@ -768,8 +778,6 @@ Vamos a crear un taller basado en los conceptos avanzados del tutorial de Bash q
 2. Utilizar y comprender el comportamiento de símbolos especiales como `$-`, `$@`, `$!` en scripts complejos.
 3. Desarrollar scripts que automaticen tareas complejas, combinando lo aprendido en módulos anteriores.
 
-**Duración:** 3 horas
-
 **Material Necesario:** Ordenadores con Bash instalado, acceso a internet, editor de texto.
 
 ---
@@ -837,8 +845,6 @@ Vamos a crear un taller basado en los conceptos avanzados del tutorial de Bash q
 
 Este taller no solo profundiza en conceptos avanzados de Bash, sino que también refuerza las habilidades necesarias para resolver problemas complejos de manera autónoma.
 
-
-¡Absolutamente! Aquí te presento una propuesta de taller para tus estudiantes, diseñada para que pongan en práctica los conocimientos adquiridos en el tutorial de scripting en Bash y los desafíen a pensar de manera más avanzada:
 
 ## Taller: Creando un Administrador de Tareas Personalizado en Bash
 
@@ -1096,11 +1102,6 @@ done
 * **Extensión:** Si sobra tiempo, puedes proponer desafíos adicionales o permitir que los estudiantes exploren funcionalidades más avanzadas.
 
 Este taller les permitirá a tus estudiantes aplicar los conceptos aprendidos en un proyecto práctico y desarrollar habilidades de resolución de problemas. Al finalizar, tendrán una base sólida para crear scripts más complejos y automatizar tareas en su día a día.
-
-**¿Te gustaría que profundicemos en alguna parte específica de este taller?**
-
-
-***
 
 
 Los `scripts` de shell son el siguiente paso en complejidad. La mayoría de los shells tienen su propio lenguaje de scripting con variables, flujo de control y su propia sintaxis.
@@ -1426,13 +1427,3 @@ bash script.sh
 ```
 
 ---
-
-Este texto debería servirte como una guía rápida y sencilla para entender y practicar algunos de los comandos más útiles en la línea de comandos. Puedes personalizar los ejemplos y agregar tus propias notas a medida que te sientas más cómodo con estos comandos.
-
-Veamos algun script más avanzado:
-
-
-
-El `$1`, es como una variable especial, que es el peso de las contraseñas. Mientras que en otros lenguajes de scripting, habrá algo como `argv`, el primer elemento del array `argv`, que es el argumento del estado. En Bash, es `$1`. Sé que muchas cosas en Bash se harán con dólares. Veremos más ejemplos de esto. Y cuando hemos creado la carpeta, hemos visto que conduce a esa carpeta, que es como una forma vaga de varianza. En realidad, escribiremos esto directamente en nuestra terminal, y funcionará, y definirá esta función. Pero a veces es mejor escribir las cosas en un archivo. Lo que podemos hacer es "source" este archivo, y eso tomará el script en nuestra terminal y lo cargará. Pero ahora parece que no ha pasado nada. Pero ahora la función `MCD` se ha definido en nuestra terminal. Ahora podemos, por ejemplo, hacer un `MCD test`. Y ahora nos movemos del directorio `tools` al directorio `test`. Creamos la carpeta y nos movimos a ella. ¿Qué más? Entonces, un resultado es que podemos acceder al primer argumento con `$1`. Hay muchos comentarios reservados. Por ejemplo, `$0` será el nombre del script. `$2` a `$9` serán el segundo al noveno argumento que tome el script. Algunas de estas palabras clave reservadas también se usarán directamente en la terminal. Por ejemplo, `$?` te dará el código de error del comentario anterior. Y con cada comentario, por ejemplo, `$_` te dará el último argumento del comentario anterior. Entonces, otra forma en que podríamos haber hecho esto es, por ejemplo, `MKMT test`. Y en lugar de reescribir "test", podemos acceder a ese último argumento usando `$_`. Eso será reemplazado por "test". Y ahora entramos en este
-
-En Bash, el símbolo `$` se utiliza para hacer referencia a diferentes tipos de variables y parámetros. A continuación, te explico algunos de los usos más comunes, incluyendo `$1`, y te proporciono una tabla resumen.

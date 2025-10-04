@@ -117,7 +117,7 @@ PS1='\[\033[1;35m\]\t \d\[\033[0m\] $ '
 En el prompt del shell, puedes escribir comandos que serán interpretados por el sistema. Por ejemplo, el comando `date` muestra la fecha y hora actual:
 
 ```bash
-$ date
+date
 ```
 
 **Salida**
@@ -126,19 +126,27 @@ $ date
 También puedes ejecutar comandos con argumentos:
 
 ```bash
-$ echo hola
-hola
+echo hola
 ```
+
+**Salida**
+> hola
+
 Pero, **¿cómo sabe el shell cómo encontrar los programas `date` o `echo`?** Bueno, el shell es un entorno de programación, como Python o C, por lo que tiene variables, condicionales, bucles y funciones. Cuando ejecuta comandos en su shell, en realidad está escribiendo un pequeño fragmento de código que su shell interpreta. Si se le pide al shell que ejecute un comando que no coincide con una de sus palabras clave de programación, consulta una variable de entorno llamada $PATH que enumera en qué directorios debe buscar programas el shell cuando recibe un comando:
 
+```bash
+echo $PATH
 ```
-$ echo $PATH
-/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-$ which date
-/bin/date
-$ /usr/bin/date
-Tue 13 Aug 2024 10:35:20 PM UTC
+
+**Salida**
+> /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+```bash
+which date
 ```
+
+**Salida**
+> /bin/date
 
 Cuando ejecutamos el comando `echo`, el shell ve que debe ejecutar el programa echo y luego busca en la lista de directorios separados por : en $PATH un archivo con ese nombre. Cuando lo encuentra, lo ejecuta (suponiendo que el archivo sea ejecutable). Podemos averiguar qué archivo se ejecuta para un nombre de programa determinado utilizando `which`. También podemos omitir $PATH por completo proporcionando la ruta al archivo que queremos ejecutar.
 
@@ -162,28 +170,70 @@ Los comandos básicos para navegar son:
 **Ejemplo:**
 
 ```bash
-~$ pwd  # Muestra el directorio actual
-/home/runner/ABC
-
-$ cd /home  # Cambia al directorio /home
-$ pwd
-/home
-
-$ cd ..  # Cambia al directorio padre
-$ pwd
-/
-
-$ cd ./home  # Equivalente a cd home
-$ pwd
-/home
-
-$ cd runner
-$ pwd
-/home/runner
-
-$ ../../bin/echo hola  # Ejecuta un comando desde una ruta absoluta
-hola
+pwd
 ```
+
+**Salida**
+
+> /home/runner/workspace
+
+```bash
+cd /home
+```
+
+```bash
+pwd
+```
+
+**Salida**
+
+> /home
+
+```bash
+cd ..
+```
+
+```bash
+pwd
+```
+
+**Salida**
+
+> /
+
+```bash
+cd ./home
+```
+
+```bash
+pwd
+```
+
+**Salida**
+
+> /home
+
+```bash
+cd runner
+```
+
+```bash
+pwd
+```
+
+**Salida**
+
+> /home/runner
+
+```bash
+../../bin/echo hola  
+```
+
+**Salida**
+
+> hola
+
+---
 
 El carácter `~` en Bash representa tu directorio home.
 
@@ -196,32 +246,65 @@ Si tu usuario es `runner` y tu directorio home está en `/home/runner`, al escri
 La variable donde se guarda el contenido de tu directorio home es la variable `$HOME` y la puedes consultar con el siguiente commando 
 
 ```bash
-$ echo $HOME
-/home/runner
-$ cd ~
-$ pwd
-/home/runner
+echo $HOME
 ```
+
+**Salida**
+
+> /home/runner
+
+También puedes usar `~` como un atajo para ir a tu directorio home:
+
+```bash
+cd ~
+```
+
+```bash
+pwd
+```
+
+**Salida**
+
+> /home/runner
 
 Para listar los archivos y directorios en un directorio, usa el comando `ls`. Puedes agregar opciones como `-l` para obtener una lista detallada.
 
 ```bash
-$ ls
-$ cd ..
-$ ls
-ABC
-$ cd /
-$ ls
-bin home boot dev etc home ...
+ls
 ```
+
+```bash
+cd ..
+```
+
+```bash
+ls
+```
+
+```bash
+cd /
+```
+
+```bash
+ls
+```
+
+**Salida**
+
+> bin home boot dev etc home ...
 
 La mayoría de los comandos aceptan opciones que modifican su comportamiento. Usa `-h` o `--help` para obtener ayuda sobre un comando específico.
 
 **Ejemplo de salida del comando `ls -l`:**
 
+```bash
+cd /home
+ls -l
 ```
-drwxr-xr-x 1 runner runner 58 Aug 13 22:23 runner
-```
+
+**Salida**
+
+>drwxr-xr-x 1 runner runner 58 Aug 13 22:23 runner
 
 * El primer carácter indica el tipo de archivo: `d` para directorio, `-` para archivo normal.
 * Los siguientes tres grupos de tres caracteres indican los permisos de lectura (r), escritura (w) y ejecución (x) para el propietario, el grupo y todos los demás usuarios, respectivamente.
@@ -242,21 +325,44 @@ En el shell, los programas tienen dos "flujos" principales asociados: el flujo d
 
 La forma más simple de redirección es `< archivo` y `> archivo`. Estos permiten redirigir el flujo de entrada y salida de un programa a un archivo, respectivamente:
 
+Podemos redirigir la salida de un comando hacia un archivo usando `>`:
+
 ```bash
-$ echo hello > hello.txt
-$ cat hello.txt
-hello
-$ cat < hello.txt > hello2.txt
-$ cat hello2.txt
-hello
+echo hello > hello.txt
+````
+
+Ahora, si mostramos el contenido del archivo con `cat`:
+
+```bash
+cat hello.txt
 ```
+
+**Salida**
+
+> hello
+
+También podemos redirigir la entrada desde un archivo con `<` y al mismo tiempo la salida hacia otro archivo con `>`:
+
+```bash
+cat < hello.txt > hello2.txt
+```
+
+Si leemos el nuevo archivo:
+
+```bash
+cat hello2.txt
+```
+
+**Salida**
+
+> hello
 
 En el ejemplo anterior, `cat` es un programa que concatena archivos. Cuando se le proporcionan nombres de archivo como argumentos, imprime el contenido de cada uno de los archivos en secuencia a su flujo de salida. Pero cuando a `cat` no se le proporciona ningún argumento, imprime el contenido de su flujo de entrada a su flujo de salida.
 
 
   <details><summary>🎩Truco</summary>
 
-intente entender que pasa cuando escribes `cat > archivo.txt`. Para terminar de ingresar datos debes presionar `Ctrl-D`.
+intente entender que pasa cuando escribes `cat > archivo.txt`. Para terminar de ingresar datos debes presionar `Ctrl-D`. Siempre tienes la opción de preguntarle a Profesorcito. 
 
 </details>
 
@@ -264,10 +370,35 @@ También puedes usar la doble flecha `>>` para **agregar contenido** a un archiv
 
 Aquí tienes algunos ejemplos:
 
+Por ejemplo, este comando lista los archivos del directorio raíz `/` en formato detallado y luego muestra **solo la última línea**:
+
 ```bash
-$ ls -l / | tail -n1  # Muestra la última línea del listado detallado del directorio /
-$ curl --head --silent google.com | grep Length  # Obtiene la longitud del contenido de google.com
+cd /bin
+````
+```bash
+ls -l
+````
+
+```bash
+ls -l | tail -n1
+````
+
+**Salida**
+
+> -rwxr-xr-x 1 root   root       4577 Apr  8  2024 znew
+
+---
+
+Otro ejemplo: con `curl --head` obtenemos las cabeceras de una página web.
+Si filtramos con `grep`, podemos mostrar solo la línea que contiene la longitud del contenido:
+
+```bash
+curl --head --silent google.com | grep Length
 ```
+
+**Salida**
+
+> Content-Length: 219
 
 Ya que mencionamos `curl`, aprendamos un poco de el:
 
@@ -278,6 +409,10 @@ Aprovechando que hablamos de `curl`, profundicemos un poco en el comando y veamo
 `Curl` es una herramienta de línea de comandos versátil, ampliamente utilizada para transferir datos a través de una variedad de protocolos de red. Creada en 1997 por Daniel Stenberg. Su nombre, `curl`, es un acrónimo de `client URL` y refleja su función principal de interactuar con recursos en la web. 
 
 **Ejemplos:**
+
+```bash
+cd ~/workspace
+```
 
 ```bash
 curl -o logo_wikimedia.png https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png
@@ -296,19 +431,13 @@ La siguiente imagen muestra el logotipo descargado para ilustrar el resultado de
 </p>
 
 ```bash
-curl -o Calendario_academico_PUJ_2024.pdf https://www.javerianacali.edu.co/sites/default/files/2023-12/Calendario_academico_PUJ_2024.pdf
+curl -o Calendario-AcadAdm2025.pdf https://www.javerianacali.edu.co/sites/default/files/2025-05/Calendario-AcadAdm2025.pdf
 ```
 Este comando hace lo siguiente:
 
 1. **Se conecta:** El comando se conecta al servidor web de la Universidad Javeriana de Cali.
-2. **Solicita:** Solicita específicamente el archivo PDF del calendario académico de 2024.
-3. **Descarga:** Descarga el archivo y lo guarda en tu computadora con el nombre "Calendario_academico_PUJ_2024.pdf".
-
-La siguiente imagen muestra el pdf descargado:
-
-<p align="center">
-  <img src="img/calendario.png" height="220">
-</p>
+2. **Solicita:** Solicita específicamente el archivo PDF del calendario académico de 2025.
+3. **Descarga:** Descarga el archivo y lo guarda en tu computadora con el nombre "Calendario-AcadAdm2025.pdf".
 
 ## Una herramienta versátil y potente
 
@@ -334,6 +463,10 @@ En este taller, crearás un script que buscará y analizará archivos específic
 
 ### Paso 3: Crear un Directorio de Trabajo
 Primero, crea un directorio donde trabajarás en este taller.
+
+```bash
+cd ~/workspace
+```
 
 ```bash
 mkdir hacker-lab
@@ -371,7 +504,7 @@ echo "Escaneo completado."
 ```
 
 <p align="center">
-  <img src="img/scanner.png" height="200">
+  <img src="img/scanner.png" height="300">
 </p>
 
 
