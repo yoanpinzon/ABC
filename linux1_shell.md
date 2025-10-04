@@ -14,9 +14,9 @@ Todas las plataformas tienen una `shell`, a menudo varias. Estas te permiten eje
 
 Para abrir un **prompt** de shell (donde puedes escribir comandos), primero necesitas un **terminal**. 
 
-## Creando nuestro primer Replit
+## Creando nuestro primer Replit App
 
-1. **Crea un nuevo Replit:** Haz clic en el botón "Create" y selecciona "Bash".
+1. **Crea una nueva App:** Haz clic en el botón "Create" y selecciona "Bash".
 2. **Explora la interfaz:** El editor a la izquierda para escribir código y a la derecha se encuentra la shell para ejecutar comandos.
 
 ## Explorando el Shell de Replit
@@ -118,8 +118,10 @@ En el prompt del shell, puedes escribir comandos que serán interpretados por el
 
 ```bash
 $ date
-Fri 10 Jan 2024 12:49:01 AM EST
 ```
+
+**Salida**
+> Fri 10 Jan 2024 12:49:01 AM EST
 
 También puedes ejecutar comandos con argumentos:
 
