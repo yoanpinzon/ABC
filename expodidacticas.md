@@ -211,6 +211,7 @@ Todo suma al ambiente didáctico y ayuda a construir una experiencia memorable. 
 📅 <strong>Fecha:</strong> 27 de octubre &nbsp;&nbsp;&nbsp; ⏰ <strong>Hora:</strong> 9:00 – 10:00
 </h3>
 
+- Carlos Santiago Sanchez Castillo  
 - Federico Galvez Gomez  
 - Juan José Franco Morales  
 - Juan Jesús Pantoja Cossio (L)  
@@ -241,7 +242,6 @@ Todo suma al ambiente didáctico y ayuda a construir una experiencia memorable. 
 📅 <strong>Fecha:</strong> 10 de noviembre &nbsp;&nbsp;&nbsp; ⏰ <strong>Hora:</strong> 8:25 – 9:40
 </h3>
 
-- Carlos Santiago Sanchez Castillo  
 - Christian David Castro Gil  
 - Jose Manuel Murgas Espinosa  
 - Juan Esteban Castaño Charry  
