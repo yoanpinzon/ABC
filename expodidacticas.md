@@ -229,11 +229,10 @@ Todo suma al ambiente didáctico y ayuda a construir una experiencia memorable. 
 
 - Eddy Andres Escobar Barrera  
 - Juan Esteban Baltan Prado  
-- Juan Guillermo Espinosa Cordoba  
-- Juan Sebastian Lopez Velez (L)  
+- Juan Guillermo Espinosa Cordoba (L)
 - Santiago Angulo Medina  
 
-**Líder:** Juan Sebastian Lopez Velez  
+**Líder:** Juan Guillermo Espinosa Cordoba  
 
 ---
 
